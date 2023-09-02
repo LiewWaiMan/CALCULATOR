@@ -1,7 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 #pragma warning (disable: 4996)
 
 #define A 4.00
@@ -32,7 +30,7 @@ int menu (void) {
 struct student
 {
   char name[50], courseCode[8];
-  int studID, currentSem;
+  int studID, currentSem ;
   double gpa, cgpa, grade, creditHours;
 } ;
 
@@ -42,6 +40,7 @@ int main(int argc, char const *argv[])
     int choice;
     //variables declaration for administrator mode
     struct student s;
+    struct student stud[5000];
     //variables declaration for student mode
 
     //logo
@@ -54,44 +53,48 @@ int main(int argc, char const *argv[])
     printf("###   #### '*#####*'  0######  0#######   ;0#0;'          ###     ,##          ##  .######;   ##          ## ###     ###  \n");
     
     //menu
-    choice = menu();
-    if (choice == 1)
+    do
     {
-      //administrator mode
-      //input
-      printf("Student information:\n");    
-      printf("Name: ");  
-      scanf("%s", s.name);
-      rewind(stdin);
-      printf("Student ID: "); 
-      scanf("%d", &s.studID);  
-      printf("Course code: ");
-      scanf("%s", s.courseCode); 
-      printf("Credit hours: ");  
-      scanf("%lf", &s.creditHours);     
-      printf("Grade:");    
-      scanf("%lf", &s.grade); 
-      printf("Current Semester:");
-      scanf("%d", &s.currentSem);
+      choice = menu();
+      if (choice == 1)
+      {
+        //administrator mode
+        //input
+        printf("Student information:\n");    
+        printf("Name: ");  
+        scanf("%s", s.name);
+        rewind(stdin);
+        printf("Student ID: "); 
+        scanf("%d", &s.studID);  
+        printf("Course code: ");
+        scanf("%s", s.courseCode); 
+        printf("Credit hours: ");  
+        scanf("%lf", &s.creditHours);     
+        printf("Grade:");    
+        scanf("%lf", &s.grade); 
+        printf("Current Semester:");
+        scanf("%d", &s.currentSem);
 
-      //process
-      
-      
-      //output
-      printf("\n-----------------------\n");
-      printf("Information display:\n");
-      printf("Name: %s\n", s.name);
-      printf("Student ID: KPKL%d\n", s.studID);
-      printf("Course code: %s\n", s.courseCode);
-      printf("Credit hours: %.2lf\n", s.creditHours);
-      printf("Grade: %.2lf\n", s.grade);
-      printf("Current semester: %d\n", s.currentSem);
-      // printf("CGPA: ", s.cgpa);
-      // printf("GPA: ", s.gpa);
-    } else if (choice == 2)
-    {
-      //student mode
-    } 
+        //process
+        
+        
+        //output
+        printf("\n-----------------------\n");
+        printf("Information display:");
+        printf("\n-----------------------\n");
+        printf("Name: %s\n", s.name);
+        printf("Student ID: KPKL%d\n", s.studID);
+        printf("Course code: %s\n", s.courseCode);
+        printf("Credit hours: %.2lf\n", s.creditHours);
+        printf("Grade: %.2lf\n", s.grade);
+        printf("Current semester: %d\n", s.currentSem);
+        // printf("CGPA: ", s.cgpa);
+        // printf("GPA: ", s.gpa);
+      } else if (choice == 2)
+      {
+        //student mode
+      } 
+    } while (choice != 3);
     
     return 0;
 }
