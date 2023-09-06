@@ -165,44 +165,46 @@ int main(int argc, char const *argv[])
           if (studentDB[i].studentID == toFindID)
           {
             foundStudent = studentDB[i];
+            printf("Found: %s\n", foundStudent.name);
+
+            printf("\n----------------------------------------------\n");
+            printf("Student's Score");
+            printf("\n----------------------------------------------\n");
+            printf("Name: %s\n", foundStudent.name);
+            printf("Student ID: KPKL%d", foundStudent.studentID);
+            printf("\n----------------------------------------------\n");
+            printf("\nSEMESTER 1:\n");
+            printf("Credit hours: \n");
+            printf("AA1003: %.2lf\n", foundStudent.sem1Sub1CreditHour);  
+            printf("AA1014: %.2lf\n", foundStudent.sem1Sub2CreditHours);
+            printf("Grade:\n");
+            printf("AAA1003: %.2lf\n",foundStudent.sem1Sub1Grade);
+            printf("AAA1013: %.2lf\n",foundStudent.sem1Sub2Grade);
+
+            printf("\nSEMESTER 2:\n");
+            printf("Credit hours:\n");
+            printf("ABA1003: %.2lf\n", foundStudent.sem2Sub1CreditHours);
+            printf("ABA1014: %.2lf\n", foundStudent.sem2Sub2CreditHours);
+            printf("Grade:\n");
+            printf("ABA1003: %.2lf\n", foundStudent.sem2Sub1Grade);
+            printf("ABA1014: %.2lf\n", foundStudent.sem2Sub2Grade);
+
+            printf("\nSEMESTER 3:\n");
+            printf("Credit hours:\n");
+            printf("ACA1003: %.2lf\n", foundStudent.sem3Sub1CreditHours);
+            printf("ACA1014: %.2lf\n", foundStudent.sem3Sub2CreditHours);
+            printf("Grade:\n");
+            printf("ACA1003: %.2lf\n", foundStudent.sem3Sub1Grade);
+            printf("ACA1014: %.2lf\n", foundStudent.sem3Sub2Grade);
+          
+            // printf("GPA: ", );
+            // printf("CGPA: ",);
             break;
+          } else
+          {
+            printf("Invalid ID");
           }
         }
-        printf("Found: %s\n", foundStudent.name);
-      
-        printf("\n----------------------------------------------\n");
-        printf("Student's Score");
-        printf("\n----------------------------------------------\n");
-        printf("Name: %s\n", foundStudent.name);
-        printf("Student ID: KPKL%d", foundStudent.studentID);
-        printf("\n----------------------------------------------\n");
-        printf("\nSEMESTER 1:\n");
-        printf("Credit hours: \n");
-        printf("AA1003: %.2lf\n", foundStudent.sem1Sub1CreditHour);  
-        printf("AA1014: %.2lf\n", foundStudent.sem1Sub2CreditHours);
-        printf("Grade:\n");
-        printf("AAA1003: %.2lf\n",foundStudent.sem1Sub1Grade);
-        printf("AAA1013: %.2lf\n",foundStudent.sem1Sub2Grade);
-
-        printf("\nSEMESTER 2:\n");
-        printf("Credit hours:\n");
-        printf("ABA1003: %.2lf\n", foundStudent.sem2Sub1CreditHours);
-        printf("ABA1014: %.2lf\n", foundStudent.sem2Sub2CreditHours);
-        printf("Grade:\n");
-        printf("ABA1003: %.2lf\n", foundStudent.sem2Sub1Grade);
-        printf("ABA1014: %.2lf\n", foundStudent.sem2Sub2Grade);
-
-        printf("\nSEMESTER 3:\n");
-        printf("Credit hours:\n");
-        printf("ACA1003: %.2lf\n", foundStudent.sem3Sub1CreditHours);
-        printf("ACA1014: %.2lf\n", foundStudent.sem3Sub2CreditHours);
-        printf("Grade:\n");
-        printf("ACA1003: %.2lf\n", foundStudent.sem3Sub1Grade);
-        printf("ACA1014: %.2lf\n", foundStudent.sem3Sub2Grade);
-       
-        // printf("GPA: ", );
-        // printf("CGPA: ",);
-        break;
       } 
     } while (choice != 3);
     
