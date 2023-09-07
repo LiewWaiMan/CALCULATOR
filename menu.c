@@ -208,5 +208,7 @@ int main(int argc, char const *argv[])
       } 
     } while (choice != 3);
     
+    printf("test");
+    
     return 0;
 }
